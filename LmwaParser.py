@@ -13,7 +13,25 @@ def convertFileToDict(fhandle):
         print(line)
     print("=============DONE============")
 
-Fieldnames = ['Meter Serial Number','Meter Time','Consumption Type',,,,,,,,,'Volume','Volume Units','Operating Time','Operating Time Units']
+
+BitField15 = "TBD"
+BitField14 = "Burst 9-24 hours within last 30 days"
+BitField13 = "Burst 1-8 hours within last 30 days"
+BitField12 = "TBD"
+BitField11 = "TBD"
+BitField10 = "TBD"
+BitField9 = "TBD"
+BitField8 = "TBD"
+BitField7 = "TBD"
+BitField6 = "TBD"
+BitField5 = "TBD"
+BitField4 = "TBD"
+BitField3 = "TBD"
+BitField2 = "TBD"
+BitField1 = "TBD"
+BitField0 = "TBD"
+
+Fieldnames = ['Meter Serial Number', 'Meter Reading', 'Consumption Type' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' , 'Volume', 'Volume Units', 'Operating Time', 'Operating Time Units']
 
 InputFile = "20180401_DLC_NoWells.csv"
 # fileHandle = open(InputFile)
@@ -28,6 +46,6 @@ InputFile = "20180401_DLC_NoWells.csv"
 # print("=============Now DictReader============")
 
 with open(InputFile,'rt') as CsvFileHandle:
-    reader = csv.DictReader(CsvFileHandle,fieldnames=['A','B'],delimiter=';')
+    reader = csv.DictReader(CsvFileHandle,fieldnames=Fieldnames,delimiter=';')
     for row in reader:
-        print(row['A'], row['B'])
+        print(row['Meter Serial Number'], row['Meter Reading'], )

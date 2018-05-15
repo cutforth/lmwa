@@ -1,0 +1,24 @@
+Database Ideas
+==============
++ LMWA_ACCOUNTS
+Serial Number, Address, Name, Username, Hash of Password
+
++ MONTHLY_READINGS
+Serial Number, Historical Useage, Historical Units, Warnings, Date Read
+Question: There will be an entry for every SN every month, what is a good way to design this?  One row for each SN each month.  Or one row for each SN and four columns for each reading?
+
+
+Development Ideas
+=================
++ Need to check to see format of .csv file.  Is it Kamstrup export or is it Excel export?
+
+
+
+
+
+
+Test Ideas
+==========
++ Need a test to run to check the .csv file after import
+
+

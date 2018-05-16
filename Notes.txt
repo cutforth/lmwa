@@ -1,7 +1,7 @@
 Database Ideas
 ==============
 + LMWA_ACCOUNTS
-Serial Number, Address, Name, Username, Hash of Password
+Account Number ("A" + SerialNumber), Serial Number, Address, Name, Email, Username, Hash of Password
 
 + MONTHLY_READINGS
 Serial Number, Historical Useage, Historical Units, Warnings, Date Read

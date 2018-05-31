@@ -41,10 +41,17 @@ def closeDB(dbConnection):
     dbConnection.close()
 
 def executeSQLCommand(dbConnection, SQLCommand):
-    myDBCursor = dbConnection.cursor()
-    myDBCursor.execute(SQLCommand)
+    # myDBCursor = dbConnection.cursor()
+    # myDBCursor.execute(SQLCommand)
+    dbConnection.cursor().execute(SQLCommand)
 
-# pdb.set_trace()
+def insertNewRow(dbConnection, dbTablename, columnNames, dataValues):
+    SQLCommand = 'INSERT INTO ' + dbTablename + columnNames + ' VALUES ' + dataValues
+    print(SQLCommand)
+    dbConnection.cursor().execute(SQLCommand)
+    saveDB(dbConnection)
+
+pdb.set_trace()
 
 myfilename = 'LMWA_ACCOUNTS.db'
 mytablename = 'LmwaAccounts'
@@ -67,12 +74,15 @@ saveDB(myDBConnection)
 # INSERT_CUTFORTH = "'INSERT INTO LmwaAccounts (account, serial_number, address) VALUES (?, ?, ?)',('A65656625', 65656625,'8637 Hollyhock')"
 # executeSQLCommand(myDBConnection,INSERT_CUTFORTH)
 
-myDBConnection.cursor().execute('INSERT INTO LmwaAccounts (account, serial_number, address) VALUES (?, ?, ?)',('A65656625', 65656625,'8637 Hollyhock'))
+# myDBConnection.cursor().execute('INSERT INTO LmwaAccounts (account, serial_number, address) VALUES (?, ?, ?)',('A65656625', 65656625,'8637 Hollyhock'))
+insertNewRow(myDBConnection, mytablename, '(account, serial_number, address)', '(\'A65656625\', 65656625,\'8637 Hollyhock\')')
+insertNewRow(myDBConnection, mytablename, '(account, serial_number, address)', '(\'A65656648\', 65656648,\'8632 Hollyhock\')')
+
 # LMWA_ACCOUNTS_ADD_HARRIS_INFO = '(\'A65656648\', 65656648, \'8632 Hollyhock\')'
 # INSERT_HARRIS = 'INSERT INTO ' + mytablename + ' (account, serial_number, address) VALUES (?, ?, ?)\', ' + LMWA_ACCOUNTS_ADD_HARRIS_INFO
 # pdb.set_trace()
 # executeSQLCommand(myDBConnection,INSERT_HARRIS)
-myDBConnection.cursor().execute('INSERT INTO LmwaAccounts (account, serial_number, address) VALUES (?, ?, ?)',('A65656648', 65656648,'8632 Hollyhock'))
-saveDB(myDBConnection)
+# myDBConnection.cursor().execute('INSERT INTO LmwaAccounts (account, serial_number, address) VALUES (?, ?, ?)',('A65656648', 65656648,'8632 Hollyhock'))
+# saveDB(myDBConnection)
 
 # executeSQLCommand(myDBConnection)

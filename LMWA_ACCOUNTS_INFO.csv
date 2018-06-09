@@ -1,0 +1,4 @@
+account, serial_number, address, name, email, username, hash
+TEXT, INTEGER, TEXT, TEXT, TEXT, TEXT, TEXT
+A65656625, 65656625, 8637 Hollyhock, Craig Cutforth, craig.cutforth@gmail.com, cutforth, ABCD
+A65656648, 65656648, 8632 Hollyhock, Phil Harris, philhbldrco@gmail.com, harris, XYZ

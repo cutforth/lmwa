@@ -7,6 +7,7 @@
 import os
 import time
 import csv
+import pdb;
 
 def convertFileToDict(fhandle):
     for line in fhandle:
@@ -91,9 +92,9 @@ Fieldnames = [Field1,  Field2,  Field3,  Field4,  Field5,
               # Field81, Field82, Field83, Field84
               ]
 
-#InputFile = "20180401_DLC_NoWells.csv"
-InputFile = "2018.04.01 LMWA Readings.csv"
-#InputFile = "2018.05.06 LMWA Readings.csv"
+InputFile = "20180401_DLC_NoWells.csv"
+# InputFile = "2018.04.01 LMWA Readings.csv"
+# InputFile = "2018.06.06 LMWA Readings.csv"
 # fileHandle = open(InputFile)
 # print(fileHandle)
 # convertFileToDict(fileHandle)
@@ -104,6 +105,7 @@ InputFile = "2018.04.01 LMWA Readings.csv"
 #         print(row)
 #
 # print("=============Now DictReader============")
+pdb.set_trace()
 
 with open(InputFile,'rt') as CsvFileHandle:
     reader = csv.DictReader(CsvFileHandle,fieldnames=Fieldnames,delimiter=';')

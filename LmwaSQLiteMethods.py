@@ -1,7 +1,7 @@
 #! /usr/sbin/python
 
 # Craig Cutforth
-# BuildLmwaAccounts.py
+# LmwaSQLiteMethods.py
 # Created: 2018.05.15
 
 import os
